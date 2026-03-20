@@ -1,0 +1,76 @@
+pocket computer screen size: 26x20
+
+@@
+@.      - \x97 invert: false
+@.
+
+@@
+.@      - \x94 invert: true
+.@
+
+@.
+@.      - \x8a invert: true
+@@
+
+.@
+.@      - \x85 invert: true
+@@
+
+@@
+..      - \x83 invert: false
+..
+
+..
+@@      - \x8c invert: false
+..
+
+..
+..      - \x8f invert: true
+@@
+
+@.
+@.      - \x95 invert: false
+@.
+
+.@
+.@      - \x95 invert: true
+.@
+
+@.
+@@      - \x9d invert: flase
+@.
+
+.@
+@@      - \x91 invert: true
+.@
+
+
+colors.white     #F0F0F0
+colors.orange    #F2B233
+colors.magenta   #E57FD8
+colors.lightBlue #99B2F2
+colors.yellow    #DEDE6C
+colors.lime      #7FCC19
+colors.pink      #F2B2CC
+colors.gray      #4C4C4C
+colors.lightGray #999999
+colors.cyan      #4C99B2
+colors.purple    #B266E5
+colors.blue      #3366CC
+colors.brown     #7F664C
+colors.green     #57A64E
+colors.red       #CC4C4C
+colors.black     #111111
+
+    -- scroll of the screen. takes image heights so set a limit on how much you can scroll
+    if event == "mouse_scroll" then
+        y_offset = y_offset - eventData[2]
+
+        local max_offset = math.max(0, #image - 20)
+        if y_offset > 0 then
+            y_offset = 0
+        elseif y_offset < -max_offset then
+            y_offset = -max_offset
+        end
+        goto continue
+    end

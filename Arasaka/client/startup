@@ -1,0 +1,22 @@
+-- require necessary files
+local login_screen = require("ui.login_screen")
+local main = require("main")
+
+-- setup the palette colors
+term.setPaletteColour(colors.red, 0xFF0000)
+
+-- get modem peripheral
+peripheral.find("modem", rednet.open)
+
+-- get serverId
+rednet.broadcast({type="discoverServerRequest"})
+local senderId = rednet.receive(nil, 3)
+if not senderId then
+    error("Time out!")
+end
+SERVER_ID = senderId
+
+
+login_screen()
+main()
+

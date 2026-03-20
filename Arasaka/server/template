@@ -1,0 +1,13 @@
+template for db.json
+
+{
+    Irecco = {
+        money=9999,
+        password="password",    : string
+        registered=true,        : bool
+        code=361846,            : number
+        last_device=0,          : number
+
+    }
+
+}
