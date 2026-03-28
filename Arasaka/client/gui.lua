@@ -30,7 +30,7 @@ function gui.draw_character(x, y, character, text_color, background_color, inver
     term.setCursorPos(x, y)
     term.setTextColor(text_color)
     term.setBackgroundColor(background_color)
-    term.write(character)
+    write(character)
     term.setCursorPos(1,1)
 end
 
@@ -82,8 +82,11 @@ function box.left_cross(x, y, border_color, background_color)
     gui.draw_character(x, y, "\x91", border_color, background_color, true)
 end
 
+function gui.draw_box(data)
+    return gui.draw_box_raw(data.x1, data.y1, data.x2, data.y2, data.text, data.stretch, data.border_color, data.background_color, data.text_color)
+end
 
-function gui.draw_box(x1, y1, x2, y2, text, stretch, border_color, background_color, text_color)
+function gui.draw_box_raw(x1, y1, x2, y2, text, stretch, border_color, background_color, text_color)
     -- if not specified, set the colors to standard black and white
     border_color = border_color or colors.white
     background_color = background_color or colors.black
@@ -190,10 +193,7 @@ function gui.draw_background(image_name, background_color, y_offset)
     term.setCursorPos(1,1)
 end
 
----comment
----@param mouse_pos table
----@param button_area table
----@return boolean
+
 function gui.button_handler(mouse_pos, button_area)
     return
         mouse_pos.x >= button_area.x1 and

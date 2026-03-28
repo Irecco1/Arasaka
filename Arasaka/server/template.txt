@@ -1,0 +1,23 @@
+template for db.json
+
+{
+    Irecco = {
+        money=9999,             : number
+        code=361846,            : number
+        temp_code=123456        : number
+        last_signature=""       : string    
+    }
+
+}
+
+template for message:
+{
+    type="type",        : string
+    data = {            : table
+        some,               : any
+        other,              : any
+        data,               : any
+    },
+    _timestamp,         : int
+    _signature,         : string
+}

@@ -1,3 +1,6 @@
 local main = require("main")
 
+os.getComputerID_backup = os.getComputerID
+os.getComputerID = function() return 14745 end
+
 main()

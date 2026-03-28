@@ -1,11 +1,9 @@
 local api = {}
 
 local handlers = {
-    discoverServerRequest = require("handlers.discoverServerRequest"),
-    registerRequest = require("handlers.registerRequest"),
-    registerVerificationRequest = require("handlers.registerVerificationRequest"),
-    loginRequest = require("handlers.registerRequest"),
-    loginVerificationRequest = require("handlers.registerVerificationRequest"),
+    keyVerifyRequest = require("handlers.keyVerifyRequest"),
+    startRequest = require("handlers.startRequest")
+    
     
 }
 
