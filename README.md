@@ -1,5 +1,6 @@
 # Arasaka
 Big work in progress project! Don't expect anything usable in near future. Project start: 17.03.2026
+- Update 1, 28.03.2026: fully implemented login system with commuinication between server and client, signed by hash, created by code shared on chat with chat box.
 
 Arasaka is a project to introduce economy to minecraft servers using CC: Tweaked and Advanced Peripherals.
 
